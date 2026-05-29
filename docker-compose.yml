@@ -1,0 +1,36 @@
+services:
+  mongodb:
+    image: mongo:7
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+    container_name: mongodb
+    networks:
+      - my-custom-network
+  backend:
+    build: ./Backend
+    container_name: backend-app
+    ports:
+      - 3001:3001
+    depends_on:
+      - mongodb
+    environment:
+      - mongoURI=mongodb://mongodb:27017/IMS
+    networks:
+      - my-custom-network
+  frontend:
+    build: ./Frontend/inventory_management_system
+    container_name: frontend-app
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+    networks:
+      - my-custom-network
+
+volumes:
+  mongo_data:
+networks:
+  my-custom-network:
+    driver: bridge
