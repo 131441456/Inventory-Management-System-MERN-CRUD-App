@@ -1,8 +1,6 @@
 services:
   mongodb:
     image: mongo:7
-    ports:
-      - 27017:27017
     volumes:
       - mongo_data:/data/db
     container_name: mongodb
@@ -11,8 +9,6 @@ services:
   backend:
     build: ./Backend
     container_name: backend-app
-    ports:
-      - 3001:3001
     depends_on:
       - mongodb
     environment:
@@ -23,7 +19,7 @@ services:
     build: ./Frontend/inventory_management_system
     container_name: frontend-app
     ports:
-      - 3000:3000
+      - 80:3000
     depends_on:
       - backend
     networks:
