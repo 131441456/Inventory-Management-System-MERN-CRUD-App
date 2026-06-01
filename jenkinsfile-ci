@@ -35,7 +35,7 @@ pipeline {
          stage('Trigger Downstream') {
             steps {
                 // Triggers the job and blocks execution until it completes
-                build 'my-downstream-job'
+                build 'CD'
             }
         }
     }
