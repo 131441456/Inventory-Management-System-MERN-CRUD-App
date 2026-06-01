@@ -18,7 +18,7 @@ services:
     networks:
       - my-custom-network
   frontend:
-    image: bansalshivani/backend-app:latest
+    image: bansalshivani/frontend-app:latest
     container_name: frontend-app
     ports:
       - 80:3000
