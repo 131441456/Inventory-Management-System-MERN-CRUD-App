@@ -27,7 +27,7 @@ export default function InsertProduct() {
     useEffect(() => {
         const getProduct = async () => {
           try {
-            const res = await fetch(`http://52.90.0.164:3001/products/${id}`, {
+            const res = await fetch(`http://3.234.199.237:3001/products/${id}`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json"
@@ -64,7 +64,7 @@ export default function InsertProduct() {
         setError("");
 
         try {
-            const response = await fetch(`http://52.90.0.164:3001/updateproduct/${id}`, {
+            const response = await fetch(`http://3.234.199.237:3001/updateproduct/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"

@@ -12,7 +12,7 @@ export default function Products() {
     const getProducts = async (e) => {
 
         try {
-            const res = await fetch("http://52.90.0.164:3001/products", {
+            const res = await fetch("http://3.234.199.237:3001/products", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -35,7 +35,7 @@ export default function Products() {
 
     const deleteProduct = async (id) => {
 
-        const response = await fetch(`http://52.90.0.164:3001/deleteproduct/${id}`, {
+        const response = await fetch(`http://3.234.199.237:3001/deleteproduct/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
