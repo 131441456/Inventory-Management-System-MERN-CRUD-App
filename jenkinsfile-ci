@@ -32,5 +32,11 @@ pipeline {
                 sh 'docker push $FRONTEND_IMAGE'
             }
         }
+         stage('Trigger Downstream') {
+            steps {
+                // Triggers the job and blocks execution until it completes
+                build 'my-downstream-job'
+            }
+        }
     }
 }
