@@ -7,12 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('checkout code') {
-            steps {
-                git branch: 'feature/devops-pipeline',
-                url: 'https://github.com/131441456/Inventory-Management-System-MERN-CRUD-App.git'
-            }
-        }
+       
          stage('Build Backend Image') {
             steps {
                 sh 'docker build -t $BACKEND_IMAGE ./Backend'
